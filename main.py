@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from routes import summarize, classify
 
-app = FastAPI(title="AI Text Analysis API")
+app = FastAPI(
+    title="AI Text Analysis API",
+    root_path="/ai-text-analyzer" 
+    )
 
 # Include route modules
 app.include_router(summarize.router, prefix="/summarize", tags=["Summarize"])
