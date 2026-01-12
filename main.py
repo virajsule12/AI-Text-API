@@ -10,6 +10,11 @@ app = FastAPI(
 app.include_router(summarize.router, prefix="/summarize", tags=["Summarize"])
 app.include_router(classify.router, prefix="/classify", tags=["Classify"])
 
+@app.get("/")
+def root():
+    return RedirectResponse(url="/ai-text-analyzer/docs")
+
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
