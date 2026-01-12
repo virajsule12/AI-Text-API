@@ -12,7 +12,7 @@ app.include_router(classify.router, prefix="/classify", tags=["Classify"])
 
 @app.get("/")
 def root():
-    return RedirectResponse(url="/ai-text-analyzer/docs")
+    return RedirectResponse(url="docs")
 
 
 @app.get("/health")
